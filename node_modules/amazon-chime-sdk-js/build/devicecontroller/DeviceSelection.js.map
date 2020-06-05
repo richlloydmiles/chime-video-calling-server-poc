@@ -1,1 +1,0 @@
-{"version":3,"file":"DeviceSelection.js","sourceRoot":"","sources":["../../src/devicecontroller/DeviceSelection.ts"],"names":[],"mappings":";AAAA,0EAA0E;AAC1E,sCAAsC;;AAEtC;IAAA;IAOA,CAAC;IAHC,4CAAkB,GAAlB,UAAmB,WAAmC;QACpD,OAAO,IAAI,CAAC,SAAS,CAAC,IAAI,CAAC,WAAW,CAAC,KAAK,IAAI,CAAC,SAAS,CAAC,WAAW,CAAC,CAAC;IAC1E,CAAC;IACH,sBAAC;AAAD,CAAC,AAPD,IAOC"}
