@@ -1,0 +1,39 @@
+import ScreenSharingSessionObserver from './ScreenSharingSessionObserver';
+export default interface ScreenSharingSession {
+    /**
+     * Opens the screen sharing session
+     */
+    open(timeoutMs: number): Promise<Event>;
+    /**
+     * Closes the screen sharing session
+     * @param {number} timeoutMs
+     * @returns {Promise<Event>}
+     */
+    close(timeoutMs: number): Promise<Event>;
+    /**
+     * Start screen sharing
+     */
+    start(sourceId?: string, timeoutMs?: number): Promise<void>;
+    /**
+     * Stop screen sharing
+     */
+    stop(): Promise<void>;
+    /**
+     * Pause screen sharing
+     */
+    pause(): Promise<void>;
+    /**
+     * Unpause screen sharing
+     */
+    unpause(): Promise<void>;
+    /**
+     *
+     * @param {ScreenSharingSessionObserver} observer
+     */
+    registerObserver(observer: ScreenSharingSessionObserver): ScreenSharingSession;
+    /**
+     *
+     * @param {ScreenSharingSessionObserver} observer
+     */
+    deregisterObserver(observer: ScreenSharingSessionObserver): ScreenSharingSession;
+}

@@ -1,0 +1,33 @@
+import { DragObserverFactory } from '../../dragobserver/DragObserver';
+import DefaultJPEGDecoderController from '../../jpegdecoder/controller/DefaultJPEGDecoderController';
+import Logger from '../../logger/Logger';
+import ReconnectingPromisedWebSocketFactory from '../../promisedwebsocket/ReconnectingPromisedWebSocketFactory';
+import ResizeObserverAdapterFactory from '../../resizeobserveradapter/ResizeObserverAdapterFactory';
+import ScreenSignalingSessionFactory from '../../screensignalingsession/ScreenSignalingSessionFactory';
+import ScreenViewingSessionObserver from '../clientobserver/ScreenViewingSessionObserver';
+import ScreenViewingDeltaRenderer from '../deltarenderer/ScreenViewingDeltaRenderer';
+import ScreenViewingDeltaSource from '../deltasource/ScreenViewingDeltaSource';
+import ScreenViewingMessageHandler from '../messagehandler/ScreenViewingMessageHandler';
+import ScreenViewingSession from '../session/ScreenViewingSession';
+import SignalingSession from '../signalingsession/SignalingSession';
+import ScreenViewingViewer from '../viewer/ScreenViewingViewer';
+import ScreenViewingComponentContext, { ScreenViewingComponentProviders } from './ScreenViewingComponentContext';
+export default class DefaultScreenViewingComponentContext implements ScreenViewingComponentContext {
+    readonly viewingSession: ScreenViewingSession;
+    readonly deltaRenderer: ScreenViewingDeltaRenderer;
+    readonly deltaSource: ScreenViewingDeltaSource;
+    readonly jpegDecoderController: DefaultJPEGDecoderController;
+    readonly messageDispatcher: ScreenViewingSessionObserver;
+    readonly messageHandler: ScreenViewingMessageHandler;
+    readonly signalingSession: SignalingSession;
+    readonly viewer: ScreenViewingViewer;
+    constructor(resizeObserverAdapterFactory: ResizeObserverAdapterFactory, dragObserverFactory: DragObserverFactory, reconnectingWSFactory: ReconnectingPromisedWebSocketFactory, screenSignalingSessionFactory: ScreenSignalingSessionFactory, logger: Logger, providers?: ScreenViewingComponentProviders, window?: Window);
+    private createSession;
+    private createDeltaRenderer;
+    private createDeltaSource;
+    private createJPEGDecoderController;
+    private createMessageDispatcher;
+    private createMessageHandler;
+    private createViewer;
+    private createSignalingSession;
+}
