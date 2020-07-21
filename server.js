@@ -33,4 +33,4 @@ app.get('/meeting', cors(), async (req, res) => {
     }
 })
 
-app.listen(5000)
+app.listen(5000, () => console.log(`Video calling POC server listening at http://localhost:5000`))
